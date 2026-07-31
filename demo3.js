@@ -44,7 +44,14 @@ array2d.forEach(function(arr){
     });
 })
 
+const a=5;
+for(let i=0; i<a; i++){
+    console.log(i);
 
+}
+/*
+ console.log(sum+number) //sum and number not defined
+*/
 
 console.log("using foreach loop on a collection",sum);
 
@@ -56,6 +63,7 @@ for(let i=0;i<array2d.length;i++){
     }
 }
 console.log("using normal nested loop",sum);
+
 
 
 let arr1=[5,2,9,1];
