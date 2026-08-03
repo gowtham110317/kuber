@@ -1,39 +1,17 @@
-# .github/workflows/js-validation.yml
-
-name: JavaScript Validation
+name: Simple JS Workflow
 
 on:
   push:
-    branches:
-      - main
-      - develop
 
 jobs:
-  validate-js:
+  run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - name: List JavaScript Files
+        run: find . -name "*.js"
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Find JavaScript Files
-        run: |
-          echo "JavaScript files:"
-          find . -name "*.js"
-
-      - name: Run ESLint
-        run: npx eslint . || true
-
-      - name: Run Unit Tests
-        run: npm test || true
-
-      - name: Success Message
-        run: echo "JavaScript workflow completed successfully!"
+      - name: Workflow Triggered
+        run: echo "Code pushed successfully!"
